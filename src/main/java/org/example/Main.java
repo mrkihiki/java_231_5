@@ -1,6 +1,8 @@
 package org.example;
 
+import exceptions.ExceptionsLesThanZero;
 import geometry2d.Circle;
+import geometry2d.Rectangle;
 import geometry3d.Cylinder;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,9 +10,13 @@ import geometry3d.Cylinder;
 public class Main {
     public static void main(String[] args) {
 
-        Circle a= new Circle(1);
-        Cylinder b= new Cylinder(10,a);
+        try {
+            Circle a= new Circle(-2);
+            Cylinder b= new Cylinder(10,a);
+        } catch (ExceptionsLesThanZero e) {
+            throw new RuntimeException(e);
+        }
         System.out.printf("Hello and welcome!");
-        System.out.println(b.volume());
+        //System.out.println(b.volume());
     }
 }
