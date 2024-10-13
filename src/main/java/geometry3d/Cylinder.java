@@ -1,19 +1,31 @@
 package geometry3d;
 
 import exceptions.ExceptionsLesThanZero;
+import exceptions.VariablesNotSet;
 import geometry2d.Figure;
 
 public class Cylinder {
-    Figure A;
-    double h;
-    public Cylinder(double h, Figure A) throws ExceptionsLesThanZero {
+    private Figure figure;
+    private float h;
+    public Cylinder(float h, Figure figure) {
         this.h=h;
-        this.A=A;
-        if(this.h<=0 || this.A==null){
-            throw new ExceptionsLesThanZero("Variables must be greater than zero");
+        this.figure =figure;
+        if(this.h<0){
+            throw new ExceptionsLesThanZero("h",this.h);
+        } else if (this.h==0) {
+            throw new VariablesNotSet("h");
+        }
+        if(this.figure ==null){
+            throw new VariablesNotSet("Figure");
         }
     }
-    public double volume(){
-        return h*A.area();
+    public void setH(float h){
+        this.h=h;
+    }
+    public void setFigure(Figure figure){
+        this.figure=figure;
+    }
+    public double volume() {
+        return h* figure.area();
     }
 }
