@@ -1,6 +1,6 @@
 package geometry2d;
 
-import exceptions.ExceptionsLesThanZero;
+import exceptions.VariablesLesThanZero;
 import exceptions.VariablesNotSet;
 
 public class Circle implements Figure {
@@ -8,7 +8,7 @@ public class Circle implements Figure {
     public Circle(float radius){
         this.radius = radius;
         if(this.radius<0){
-            throw new ExceptionsLesThanZero("radius",this.radius);
+            throw new VariablesLesThanZero("radius",this.radius);
         }
     }
     public void setRadius(float radius){
@@ -16,7 +16,7 @@ public class Circle implements Figure {
     }
     public float area()  {
         if(this.radius<0){
-            throw new ExceptionsLesThanZero("radius",this.radius);
+            throw new VariablesLesThanZero("radius",this.radius);
         }
         if(this.radius==0){
             throw new VariablesNotSet("radius");
@@ -26,7 +26,7 @@ public class Circle implements Figure {
 
     public float perimeter() {
         if(this.radius<0){
-            throw new ExceptionsLesThanZero("radius",this.radius);
+            throw new VariablesLesThanZero("radius",this.radius);
         }
         if(this.radius==0){
             throw new VariablesNotSet("radius");

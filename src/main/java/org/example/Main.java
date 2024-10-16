@@ -1,6 +1,6 @@
 package org.example;
 
-import exceptions.ExceptionsLesThanZero;
+import exceptions.VariablesLesThanZero;
 import exceptions.VariablesNotSet;
 import geometry2d.Circle;
 import geometry2d.Rectangle;
@@ -11,18 +11,21 @@ import geometry3d.Cylinder;
 public class Main {
     public static void main(String[] args) {
         try {
+            System.out.println("circle");
             Circle circle = new Circle(5);
             System.out.println(circle.perimeter());
             System.out.println(circle.area());
             System.out.println(circle.toString());
+            System.out.println("cylinder");
             Cylinder cylinder = new Cylinder(10, circle);
             System.out.println(cylinder.volume());
+            System.out.println("Rectangle");
             Rectangle rectangle = new Rectangle(5,4);
             System.out.println(rectangle.perimeter());
             System.out.println(rectangle.area());
             System.out.println(rectangle.toString());
 
-        } catch (ExceptionsLesThanZero | VariablesNotSet ex) {
+        } catch (VariablesLesThanZero | VariablesNotSet ex) {
             throw new RuntimeException(ex);
         }
         //System.out.printf("Hello and welcome!");

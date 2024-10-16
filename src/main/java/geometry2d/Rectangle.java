@@ -1,6 +1,6 @@
 package geometry2d;
 
-import exceptions.ExceptionsLesThanZero;
+import exceptions.VariablesLesThanZero;
 import exceptions.VariablesNotSet;
 
 public class Rectangle implements Figure {
@@ -11,11 +11,11 @@ public class Rectangle implements Figure {
         this.width=width;
         this.height=height;
         if(this.width<0 && this.height<0){
-            throw new ExceptionsLesThanZero("width","height",this.width,this.height);
+            throw new VariablesLesThanZero("width","height",this.width,this.height);
         }else if(this.width<0){
-            throw new ExceptionsLesThanZero("width",this.width);
+            throw new VariablesLesThanZero("width",this.width);
         }else if(this.height<0){
-            throw new ExceptionsLesThanZero("height",this.height);
+            throw new VariablesLesThanZero("height",this.height);
         }
     }
     public void setWidth(float width){
@@ -26,11 +26,11 @@ public class Rectangle implements Figure {
     }
     public float area() {
         if(this.width<0 && this.height<0){
-            throw new ExceptionsLesThanZero("width","height",this.width,this.height);
+            throw new VariablesLesThanZero("width","height",this.width,this.height);
         }else if(this.width<0){
-            throw new ExceptionsLesThanZero("width",this.width);
+            throw new VariablesLesThanZero("width",this.width);
         }else if(this.height<0){
-            throw new ExceptionsLesThanZero("height",this.height);
+            throw new VariablesLesThanZero("height",this.height);
         }
         if(this.width==0 && this.height==0){
             throw new VariablesNotSet("width,height");
@@ -43,11 +43,11 @@ public class Rectangle implements Figure {
     }
     public float perimeter() {
         if(this.width<0 && this.height<0){
-            throw new ExceptionsLesThanZero("width","height",this.width,this.height);
+            throw new VariablesLesThanZero("width","height",this.width,this.height);
         }else if(this.width<0){
-            throw new ExceptionsLesThanZero("width",this.width);
+            throw new VariablesLesThanZero("width",this.width);
         }else if(this.height<0){
-            throw new ExceptionsLesThanZero("height",this.height);
+            throw new VariablesLesThanZero("height",this.height);
         }
         if(this.width==0 && this.height==0){
             throw new VariablesNotSet("width,height");

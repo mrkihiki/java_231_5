@@ -1,6 +1,6 @@
 package geometry3d;
 
-import exceptions.ExceptionsLesThanZero;
+import exceptions.VariablesLesThanZero;
 import exceptions.VariablesNotSet;
 import geometry2d.Figure;
 
@@ -11,7 +11,7 @@ public class Cylinder {
         this.h=h;
         this.figure =figure;
         if(this.h<0){
-            throw new ExceptionsLesThanZero("h",this.h);
+            throw new VariablesLesThanZero("h",this.h);
         } else if (this.h==0) {
             throw new VariablesNotSet("h");
         }
