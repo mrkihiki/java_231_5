@@ -5,6 +5,7 @@ import exceptions.VariablesNotSet;
 
 public class Circle implements Figure {
     private float radius;
+    public Circle(){};
     public Circle(float radius){
         this.radius = radius;
         if(this.radius<0){

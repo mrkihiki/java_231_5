@@ -6,7 +6,7 @@ import exceptions.VariablesNotSet;
 public class Rectangle implements Figure {
     private float width;
     private float height;
-
+    public Rectangle(){};
     public Rectangle(int width, int height) {
         this.width=width;
         this.height=height;

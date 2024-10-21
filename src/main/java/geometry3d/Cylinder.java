@@ -26,6 +26,14 @@ public class Cylinder {
         this.figure=figure;
     }
     public double volume() {
+        if(this.h<0){
+            throw new VariablesLesThanZero("h",this.h);
+        } else if (this.h==0) {
+            throw new VariablesNotSet("h");
+        }
+        if(this.figure ==null){
+            throw new VariablesNotSet("Figure");
+        }
         return h* figure.area();
     }
 }
