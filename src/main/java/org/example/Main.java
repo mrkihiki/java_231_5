@@ -6,11 +6,17 @@ import geometry2d.Circle;
 import geometry2d.Rectangle;
 import geometry3d.Cylinder;
 
+import java.util.logging.*;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
         try {
+            Handler consoleHandler = new ConsoleHandler();
+            consoleHandler.setFormatter(new SimpleFormatter());
+            LOGGER.addHandler(consoleHandler);
             System.out.println("circle");
             Circle circle = new Circle(5);
             System.out.println(circle.perimeter());
@@ -20,13 +26,14 @@ public class Main {
             Cylinder cylinder = new Cylinder(10, circle);
             System.out.println(cylinder.volume());
             System.out.println("Rectangle");
-            Rectangle rectangle = new Rectangle(5,4);
+            Rectangle rectangle = new Rectangle(-5,4);
             System.out.println(rectangle.perimeter());
             System.out.println(rectangle.area());
             System.out.println(rectangle.toString());
 
         } catch (VariablesLesThanZero | VariablesNotSet ex) {
-            throw new RuntimeException(ex);
+            LOGGER.log(Level.SEVERE,"Exception: {0}",ex.getMessage());
+            //throw new RuntimeException(ex);
         }
         //System.out.printf("Hello and welcome!");
         //System.out.println(b.volume());
