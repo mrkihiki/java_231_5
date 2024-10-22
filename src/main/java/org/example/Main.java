@@ -16,7 +16,9 @@ public class Main {
         try {
             Handler consoleHandler = new ConsoleHandler();
             consoleHandler.setFormatter(new SimpleFormatter());
+            consoleHandler.setLevel(Level.FINE);
             LOGGER.addHandler(consoleHandler);
+            LOGGER.setLevel(Level.FINE);
             System.out.println("circle");
             Circle circle = new Circle(5);
             System.out.println(circle.perimeter());
@@ -26,13 +28,13 @@ public class Main {
             Cylinder cylinder = new Cylinder(10, circle);
             System.out.println(cylinder.volume());
             System.out.println("Rectangle");
-            Rectangle rectangle = new Rectangle(-5,4);
+            Rectangle rectangle = new Rectangle(5,4);
             System.out.println(rectangle.perimeter());
             System.out.println(rectangle.area());
             System.out.println(rectangle.toString());
-
         } catch (VariablesLesThanZero | VariablesNotSet ex) {
-            LOGGER.log(Level.SEVERE,"Exception: {0}",ex.getMessage());
+            //System.out.println(ex.getMessage());
+            LOGGER.log(Level.FINE,"Exception: {0}",ex.getMessage());
             //throw new RuntimeException(ex);
         }
         //System.out.printf("Hello and welcome!");

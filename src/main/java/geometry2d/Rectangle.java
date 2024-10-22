@@ -25,11 +25,13 @@ public class Rectangle implements Figure {
         this.width=width;
         this.height=height;
         if(this.width<0 && this.height<0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}; height = {1}) must be greater than zero", new Object[]{this.width,this.height});
+            LOGGER.log(Level.INFO,"Variables(width = {0}; height = {1}) must be greater than zero", new Object[]{this.width,this.height});
             throw new VariablesLesThanZero("width","height",this.width,this.height);
         }else if(this.width<0){
+            LOGGER.log(Level.INFO,"Variables(width = {0}) must be greater than zero",this.width);
             throw new VariablesLesThanZero("width",this.width);
         }else if(this.height<0){
+            LOGGER.log(Level.INFO,"Variables(height = {0}) must be greater than zero",this.height);
             throw new VariablesLesThanZero("height",this.height);
         }
     }
@@ -40,49 +42,53 @@ public class Rectangle implements Figure {
         this.height= height;
     }
     public float area() {
+        LOGGER.log(Level.INFO,"Start area()");
         if(this.width<0 && this.height<0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}; height = {1}) must be greater than zero", new Object[]{this.width,this.height});
+            LOGGER.log(Level.INFO,"Variables(width = {0}; height = {1}) must be greater than zero", new Object[]{this.width,this.height});
             throw new VariablesLesThanZero("width","height",this.width,this.height);
         }else if(this.width<0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}) must be greater than zero",this.width);
+            LOGGER.log(Level.INFO,"Variables(width = {0}) must be greater than zero",this.width);
             throw new VariablesLesThanZero("width",this.width);
         }else if(this.height<0){
-            LOGGER.log(Level.SEVERE,"Variables(height = {0}) must be greater than zero",this.height);
+            LOGGER.log(Level.INFO,"Variables(height = {0}) must be greater than zero",this.height);
             throw new VariablesLesThanZero("height",this.height);
         }
         if(this.width==0 && this.height==0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}; height = {1}) not set or equals 0", new Object[]{this.width,this.height});
+            LOGGER.log(Level.INFO,"Variables(width = {0}; height = {1}) not set or equals 0", new Object[]{this.width,this.height});
             throw new VariablesNotSet("width,height");
         }else if(this.width==0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}) not set or equals 0",this.width);
+            LOGGER.log(Level.INFO,"Variables(width = {0}) not set or equals 0",this.width);
             throw new VariablesNotSet("width,height");
         }else if(this.height==0){
-            LOGGER.log(Level.SEVERE,"Variables(height = {0}) not set or equals 0",this.height);
+            LOGGER.log(Level.INFO,"Variables(height = {0}) not set or equals 0",this.height);
             throw new VariablesNotSet("width,height");
         }
+        LOGGER.log(Level.INFO,"End");
         return width * height;
     }
     public float perimeter() {
+        LOGGER.log(Level.INFO,"Start perimeter()");
         if(this.width<0 && this.height<0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}; height = {1}) must be greater than zero", new Object[]{this.width,this.height});
+            LOGGER.log(Level.INFO,"Variables(width = {0}; height = {1}) must be greater than zero", new Object[]{this.width,this.height});
             throw new VariablesLesThanZero("width","height",this.width,this.height);
         }else if(this.width<0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}) must be greater than zero",this.width);
+            LOGGER.log(Level.INFO,"Variables(width = {0}) must be greater than zero",this.width);
             throw new VariablesLesThanZero("width",this.width);
         }else if(this.height<0){
-            LOGGER.log(Level.SEVERE,"Variables(height = {0}) must be greater than zero",this.height);
+            LOGGER.log(Level.INFO,"Variables(height = {0}) must be greater than zero",this.height);
             throw new VariablesLesThanZero("height",this.height);
         }
         if(this.width==0 && this.height==0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}; height = {1}) not set or equals 0", new Object[]{this.width,this.height});
+            LOGGER.log(Level.INFO,"Variables(width = {0}; height = {1}) not set or equals 0", new Object[]{this.width,this.height});
             throw new VariablesNotSet("width,height");
         }else if(this.width==0){
-            LOGGER.log(Level.SEVERE,"Variables(width = {0}) not set or equals 0",this.width);
+            LOGGER.log(Level.INFO,"Variables(width = {0}) not set or equals 0",this.width);
             throw new VariablesNotSet("width,height");
         }else if(this.height==0){
             LOGGER.log(Level.SEVERE,"Variables(height = {0}) not set or equals 0",this.height);
             throw new VariablesNotSet("width,height");
         }
+        LOGGER.log(Level.INFO,"End");
         return (width + height)*2;
     }
     public String toString(){

@@ -32,6 +32,7 @@ public class Circle implements Figure {
         this.radius=radius;
     }
     public float area()  {
+        LOGGER.log(Level.SEVERE,"Start area()");
         if(this.radius<0){
             LOGGER.log(Level.SEVERE,"Variables(h = {0}) must be greater than zero",this.radius);
             throw new VariablesLesThanZero("radius",this.radius);
@@ -40,10 +41,12 @@ public class Circle implements Figure {
             LOGGER.log(Level.FINEST, "Variables(h) not set or equals 0",this.radius);
             throw new VariablesNotSet("radius");
         }
+        LOGGER.log(Level.SEVERE,"End");
         return (float) (radius*radius*Math.PI);
     }
 
     public float perimeter() {
+        LOGGER.log(Level.SEVERE,"Start perimeter()");
         if(this.radius<0){
             LOGGER.log(Level.SEVERE,"Variables(h = {0}) must be greater than zero",this.radius);
             throw new VariablesLesThanZero("radius",this.radius);
@@ -52,6 +55,7 @@ public class Circle implements Figure {
             LOGGER.log(Level.FINEST, "Variables(h) not set or equals 0",this.radius);
             throw new VariablesNotSet("radius");
         }
+        LOGGER.log(Level.SEVERE,"End");
         return (float) (2*radius*Math.PI);
     }
     public String toString(){

@@ -44,6 +44,7 @@ public class Cylinder {
         this.figure=figure;
     }
     public double volume() {
+        LOGGER.fine("Start volume()");
         if(this.h<0){
             LOGGER.log(Level.FINEST, "Variables(h = {0}) must be greater than zero",this.h);
             throw new VariablesLesThanZero("h",this.h);
@@ -55,6 +56,7 @@ public class Cylinder {
             LOGGER.log(Level.FINEST, "Variables(Figure) not set or equals 0",this.h);
             throw new VariablesNotSet("Figure");
         }
+        LOGGER.fine("End");
         return h* figure.area();
     }
 }
