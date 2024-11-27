@@ -16,6 +16,7 @@ public class Cylinder {
             fileHandler.setFormatter(new SimpleFormatter());
             LOGGER.addHandler(fileHandler);
             LOGGER.setLevel(Level.FINEST);
+            LOGGER.setUseParentHandlers(false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

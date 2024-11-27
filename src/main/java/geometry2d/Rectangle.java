@@ -17,6 +17,7 @@ public class Rectangle implements Figure {
             fileHandler = new FileHandler("figures.log");
             fileHandler.setFormatter(new XMLFormatter());
             LOGGER.addHandler(fileHandler);
+            LOGGER.setUseParentHandlers(false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

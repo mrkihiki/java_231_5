@@ -17,7 +17,8 @@ public class Circle implements Figure {
             fileHandler = new FileHandler("figures.log");
             fileHandler.setFormatter(new XMLFormatter());
             LOGGER.addHandler(fileHandler);
-            System.out.println(Arrays.toString(LOGGER.getHandlers()));
+            LOGGER.setUseParentHandlers(false);
+            //System.out.println(Arrays.toString(LOGGER.getHandlers()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
